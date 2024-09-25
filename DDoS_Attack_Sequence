@@ -1,0 +1,21 @@
+```mermaid
+sequenceDiagram
+ participant User
+ participant Attacker
+ participant BotNet
+  participant Firewall
+ participant WebServer
+  User->>WebServer: Request access to site
+  Attacker->>WebServer: Attack
+    Firewall-->>Attacker: Disconnect
+  BotNet->>WebServer: Attack
+    WebServer-->>User: Unable to Respond
+
+```
+
+##Steps of DDoS Attack
+1. A user of a site makes a request through the server
+2. An attacker makes several rapid requests targeting the server
+3. The firewall responds by closing the connection
+4. The attacker employs the BotNet to target the server with attacks from multiple computers
+5. The server is overloaded and may be slow or unable to respond to user requests
